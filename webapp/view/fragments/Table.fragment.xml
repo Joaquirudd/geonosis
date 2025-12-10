@@ -1,0 +1,76 @@
+<core:FragmentDefinition 
+    xmlns="sap.m" 
+    xmlns:core="sap.ui.core"
+    xmlns:fb="sap.ui.comp.filterbar">
+
+        <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+            <fb:filterGroupItems>
+                <fb:FilterGroupItem name="Name" label="Name" groupName="Group1" visibleInFilterBar="true">
+                    <fb:control>
+                        <Input
+                            id="productName"
+                            value="{filtros>/nombre}"
+                            showSuggestion="true"
+                            valueHelpRequest="_openFragment">
+                        </Input>
+                    </fb:control>
+                </fb:FilterGroupItem>
+                <fb:FilterGroupItem name="Category" label="Category" groupName="Group1" visibleInFilterBar="true">
+                    <fb:control>
+                        <Input
+                            id="productCategory"
+                            value="{filtros>/categoria}"
+                            showSuggestion="true"
+                            valueHelpRequest="_openFragment">
+                        </Input>
+                    </fb:control>
+                </fb:FilterGroupItem>
+                <fb:FilterGroupItem name="Estado" label="Estado" groupName="Group1" visibleInFilterBar="true">
+                    <fb:control>
+                        <Input
+                            id="productEstado"
+                            value="{filtros>/estado}"
+                            showSuggestion="true"
+                            valueHelpRequest="_openFragment">
+                        </Input>
+                    </fb:control>
+                </fb:FilterGroupItem>
+            </fb:filterGroupItems>
+        </fb:FilterBar>
+
+        <Table items="{/items}" id="productTable"> 
+            <columns>
+                <Column >
+                    <Text text="ID"/>
+                </Column>
+                <Column>
+                    <Text text="Producto" />
+                </Column>
+                <Column>
+                    <Text text="Categoria" />
+                </Column>
+                <Column >
+                    <Text text="Estado" />
+                </Column>
+                <Column >
+                    <Text text="Precio" />
+                </Column>
+                <Column >
+                    <Text text="Stock" />
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{id}"/>
+                        <Text text="{nombre}"/>
+                        <Text text="{categoria}"/>
+                        <Text text="{estado}"/>
+                        <Text text="{precio}"/>
+                        <Text text="{stock}"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+</core:FragmentDefinition>

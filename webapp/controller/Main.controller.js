@@ -26,8 +26,6 @@ sap.ui.define([
             debugger
         },
 
-        
-
         onSearch: function () {
             this._applyFilters();
         },
